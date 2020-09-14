@@ -126,9 +126,9 @@ public class ProcessLauncher {
 
 	public static void main(String [] args) throws Exception {
 
-
-		System.out.println("Enviroment:" + System.getenv());
-		System.out.println("Properties:" + System.getProperties());
+		//jstorm2.1.1无法提交任务，大量ProcessLauncher进程卡在这里，需要改成LOG.info
+		LOG.info("Enviroment:" + System.getenv());
+		LOG.info("Properties:" + System.getProperties());
 
 		//when worker is dead, supervisor can kill ProcessLauncher right now
 		String workerId = System.getenv("jstorm.workerId");
